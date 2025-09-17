@@ -18,8 +18,9 @@ Supports multiple **printer modes** and **printer types** (Cartesian & Delta).
 
 All printer setup components output **lists** for easier wiring in Grasshopper:
 
+```
 [ Mode, PrinterType, Params, BedX, BedY, BedZ, BedRadius, BedShape ]
-
+```
 
 - **Mode** → `"Hot"`, `"Clay"`, or `"Pen"`  
 - **PrinterType** → `"Cartesian"` or `"Delta"`  
@@ -42,9 +43,11 @@ Profile = [
   300, 300, 300, None,
   <Rectangle NurbsCurve>
 ]
-Clay (Delta, radius 150 mm, height 300 mm)
-python
-Copy code
+```
+
+### Clay (Delta, radius 150 mm, height 300 mm)
+
+```python
 Profile = [
   "Clay", "Delta",
   {"ExtrusionPressure": 4.0, "FlowRate": 10.0, "RetractionDelay": 0.5,
@@ -52,9 +55,11 @@ Profile = [
   None, None, 300, 150,
   <Circle NurbsCurve>
 ]
-Pen (Cartesian, 200×200×200 mm)
-python
-Copy code
+```
+
+### Pen (Cartesian, 200×200×200 mm)
+
+```python
 Profile = [
   "Pen", "Cartesian",
   {"PenUpHeight": 5, "PenDownOffset": 0.2,
@@ -62,60 +67,69 @@ Profile = [
   200, 200, 200, None,
   <Rectangle NurbsCurve>
 ]
-📊 Parameter Tables
-Hot (FDM thermoplastic)
-Param	Default	Description
-NozzleTemp	210 °C	Hotend temperature
-BedTemp	30 °C	Heated bed temperature
-ExtrusionMultiplier	0.20	Extrusion volume scaling
-FeedRate	1500	Motion feedrate (mm/min)
-ClearanceHeight	5	Lift height between paths
+```
 
-Clay (Paste/Concrete)
-Param	Default	Description
-ExtrusionPressure	4.0 bar	Syringe/pressure setting
-FlowRate	10.0	Material flow rate
-RetractionDelay	0.5 s	Pause before retracting pressure
-CurePause	0.0 s	Optional curing dwell time
-FeedRate	800	Motion feedrate (mm/min)
-ClearanceHeight	5	Lift height between paths
+---
 
-Pen (Plotter/Motion-only)
-Param	Default	Description
-PenUpHeight	5 mm	Z-height when pen is lifted
-PenDownOffset	0.2 mm	Offset below surface for plotting
-PenDownDelay	100 ms	Delay after lowering pen
-FeedRate	1000	Motion feedrate (mm/min)
+## 📊 Parameter Tables
 
-🖨️ FOAM_GcodeGenerator
-Inputs:
+### Hot (FDM thermoplastic)
 
-Geometry → Polylines or PolylineCurves (toolpaths, ordered by Z for printing)
+| Param              | Default | Description                     |
+|--------------------|---------|---------------------------------|
+| `NozzleTemp`       | 210 °C  | Hotend temperature              |
+| `BedTemp`          | 30 °C   | Heated bed temperature          |
+| `ExtrusionMultiplier` | 0.20 | Extrusion volume scaling        |
+| `FeedRate`         | 1500    | Motion feedrate (mm/min)        |
+| `ClearanceHeight`  | 5       | Lift height between paths       |
 
-Profile → List from any FOAM_PrinterSetup component
+### Clay (Paste/Concrete)
 
-BaseCode → Optional header/footer G-code lines
+| Param               | Default | Description                     |
+|---------------------|---------|---------------------------------|
+| `ExtrusionPressure` | 4.0 bar | Syringe/pressure setting        |
+| `FlowRate`          | 10.0    | Material flow rate              |
+| `RetractionDelay`   | 0.5 s   | Pause before retracting pressure|
+| `CurePause`         | 0.0 s   | Optional curing dwell time      |
+| `FeedRate`          | 800     | Motion feedrate (mm/min)        |
+| `ClearanceHeight`   | 5       | Lift height between paths       |
 
-FilePath → Optional path to save G-code file
+### Pen (Plotter/Motion-only)
 
-Outputs:
+| Param            | Default | Description                     |
+|------------------|---------|---------------------------------|
+| `PenUpHeight`    | 5 mm    | Z-height when pen is lifted     |
+| `PenDownOffset`  | 0.2 mm  | Offset below surface for plotting |
+| `PenDownDelay`   | 100 ms  | Delay after lowering pen        |
+| `FeedRate`       | 1000    | Motion feedrate (mm/min)        |
 
-Gcode → Full list of G-code strings
+---
 
-Preview → Rhino polylines for visualization
+## 🖨️ FOAM_GcodeGenerator
 
-PreviewText → Short preview (first 30 lines)
+**Inputs**
 
-Report → Debug info + warnings
+- `Geometry` → Polylines or PolylineCurves (toolpaths, ordered by Z for printing)  
+- `Profile` → List from any FOAM_PrinterSetup component  
+- `BaseCode` → Optional header/footer G-code lines  
+- `FilePath` → Optional path to save G-code file  
 
-Bed → Bed outline curve (rectangle or circle)
+**Outputs**
 
-BadPts, BadSegs, WarnDots → Out-of-bounds diagnostics
+- `Gcode` → Full list of G-code strings  
+- `Preview` → Rhino polylines for visualization  
+- `PreviewText` → Short preview (first 30 lines)  
+- `Report` → Debug info + warnings  
+- `Bed` → Bed outline curve (rectangle or circle)  
+- `BadPts`, `BadSegs`, `WarnDots` → Out-of-bounds diagnostics  
 
-📖 Citation
-Borunda, L., & Anaya, R. (2022). Hierarchical structures: Computational design and digital 3D printing.
-Journal of the International Association for Shell and Spatial Structures, 64(1).
-https://doi.org/10.20898/j.iass.2022.015
+---
 
-L. Borunda, rhinoFOAM, GitHub repository, 2025.
-[Online]. Available: https://github.com/lborunda/rhinoFOAMDocumentation for rhinoFOAM plugin
+## 📖 Citation
+
+Borunda, L., & Anaya, R. (2022). *Hierarchical structures: Computational design and digital 3D printing.*  
+Journal of the International Association for Shell and Spatial Structures, 64(1).  
+https://doi.org/10.20898/j.iass.2022.015  
+
+L. Borunda, *rhinoFOAM*, GitHub repository, 2025.  
+[Online]. Available: https://github.com/lborunda/rhinoFOAM
