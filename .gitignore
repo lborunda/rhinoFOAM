@@ -1,0 +1,19 @@
+# macOS system files
+.DS_Store
+
+# Rhino backups
+*.3dmbak
+*.bak
+
+# Python cache
+__pycache__/
+*.pyc
+
+# IDE settings
+.vscode/
+.idea/
+
+# Windows junk
+Thumbs.db
+ehthumbs.db
+Desktop.ini
