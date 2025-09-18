@@ -3,9 +3,15 @@
 **FOAM_GcodeGenerator** converts Rhino/Grasshopper polylines into G-code using **Free-Oriented Additive Manufacturing (FOAM)** principles.  
 Supports multiple **printer modes** and **printer types** (Cartesian & Delta).  
 
+## Download
+
+👉👉👉 rhinoFOAM is available on [Food4Rhino](https://www.food4rhino.com/en/app/rhinofoam?lang=en).
+
+Use this page to download the latest packaged release for Rhino/Grasshopper.
+
 ---
 
-## 📦 Components
+## 📦📦 Components
 
 - **FOAM_PrinterSetup_Hot** → FDM / thermoplastic printing (heated nozzle + bed)  
 - **FOAM_PrinterSetup_Clay** → Clay / paste / concrete extrusion (pressure-based)  
@@ -14,7 +20,7 @@ Supports multiple **printer modes** and **printer types** (Cartesian & Delta).
 
 ---
 
-## 🔧 Profile Format
+## 🔧🔧 Profile Format
 
 All printer setup components output **lists** for easier wiring in Grasshopper:
 
@@ -31,7 +37,7 @@ All printer setup components output **lists** for easier wiring in Grasshopper:
 
 ---
 
-## ⚙️ Examples
+## ⚙️⚙️ Examples
 
 ### Hot (Cartesian, 300×300×300 mm)
 
@@ -127,9 +133,13 @@ Profile = [
 
 ## 📖 Citation
 
+
 Borunda, L., & Anaya, R. (2022). *Hierarchical structures: Computational design and digital 3D printing.*  
 Journal of the International Association for Shell and Spatial Structures, 64(1).  
 https://doi.org/10.20898/j.iass.2022.015  
 
-L. Borunda, *rhinoFOAM*, GitHub repository, 2025.  
-[Online]. Available: https://github.com/lborunda/rhinoFOAM
+Borunda, L. (2025). rhinoFOAM: Free-Oriented Additive Manufacturing plugin for Rhino/Grasshopper (Version 1.0) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.1234567
+
+## rhinoFOAM
+
+[![Food4Rhino](https://img.shields.io/badge/Download-Food4Rhino-blue)](https://www.food4rhino.com/en/app/rhinofoam?lang=en)
