@@ -11,7 +11,7 @@ Use this page to download the latest packaged release for Rhino/Grasshopper.
 
 ---
 
-## 📦📦 Components
+## Components
 
 - **FOAM_PrinterSetup_Hot** → FDM / thermoplastic printing (heated nozzle + bed)  
 - **FOAM_PrinterSetup_Clay** → Clay / paste / concrete extrusion (pressure-based)  
@@ -20,7 +20,7 @@ Use this page to download the latest packaged release for Rhino/Grasshopper.
 
 ---
 
-## 🔧🔧 Profile Format
+## Profile Format
 
 All printer setup components output **lists** for easier wiring in Grasshopper:
 
@@ -37,7 +37,7 @@ All printer setup components output **lists** for easier wiring in Grasshopper:
 
 ---
 
-## ⚙️⚙️ Examples
+## ⚙️ Examples
 
 ### Hot (Cartesian, 300×300×300 mm)
 
